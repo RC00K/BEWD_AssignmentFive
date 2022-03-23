@@ -68,6 +68,12 @@ button {
 	transition: transform 80ms ease-in;
 }
 
+.center-box {
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+}
+
 .submit-btn {
 	max-width: 130px;
 	padding: 10px 30px;
@@ -104,15 +110,16 @@ form {
 
 form input {
 	display: inline-block;
-	padding: 0.8rem;
-	background-color: #eee;
-	border: transparent;
-	border-radius: 6px;
-	margin: 8px 0;
-	outline: none;
-	min-width: 85vw;
-	box-sizing: border-box;
-	box-shadow: 0 0 10px rgba(0,0,0,0.25), 0 0 2px rgba(0,0,0,0.25);
+    padding: 0.8rem;
+    background-color: #eee;
+    border: transparent;
+    border-radius: 6px;
+    margin: 8px 0 8px 0;
+    outline: none;
+    min-width: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgb(0 0 0 / 25%), 0 0 2px rgb(0 0 0 / 25%);
 }
 
 input::placeholder {
@@ -209,6 +216,36 @@ footer {
 
 .red {
     color:red;
+}
+
+.radio {
+	display: inline-flex;
+	margin-left: 190px;
+	overflow: hidden;
+	border-radius: 15px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
+
+.radio__input {
+	display: none;
+}
+
+.radio__label {
+	padding: 6px 20px;
+	font-size: 14px;
+	font-family: sans-serif;
+	color: #ffffff;
+	background: #4a6c96;
+	cursor: pointer;
+	transition: background 0.1s;
+}
+
+.radio__label:not(:last-of-type) {
+	border-right: 1px solid #2e445e;
+}
+
+.radio__input:checked + .radio__label {
+	background: #2e445e;
 }
 
 main {
@@ -486,7 +523,7 @@ input[type="checkbox"] {
 select {
 	margin: 4px;
 	color: #EC6F66;
-	width: 400px;
+	width: 500px;
 	padding: 8px;
 	height: 15px;
 	display: inline-block;

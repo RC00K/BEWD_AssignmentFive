@@ -15,8 +15,8 @@
     </nav>
     <header>
         <div class="box">
-        <form action="." method="POST">
-                    <input type="hidden" name="action" value="show_add_vehicle">
+        <form action="." method="GET">
+                    <input type="hidden" name="action" value="show_vehicle_list">
                     <div class="one">
                     <select name="make_id" class="dropDown_selector text-primary">
                     
@@ -63,16 +63,16 @@
                         </select>
                     </div>
 
-                    <div class="btn-class btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="sort" id="sort_price" value="price" autocomplete="off" checked>
-                            <label class="btn btn-outline-secondary" for="sort_price">Sort By Price</label>
+                    <div class="radio btn-class btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="radio__input btn-check" name="sort" id="sort_price" value="price" autocomplete="off" checked>
+                            <label class="radio__label btn btn-outline-secondary" for="sort_price">Price</label>
 
-                            <input type="radio" class="btn-check" name="sort" id="sort_year" value="year" autocomplete="off">
-                            <label class="btn btn-outline-secondary" for="sort_year">Sort By Year</label>  
-                            <div class="col-auto">
-                                <button type="submit" class="submit-btn">Submit</button>
-                            </div> 
+                            <input type="radio" class="radio__input btn-check" name="sort" id="sort_year" value="year" autocomplete="off">
+                            <label class="radio__label btn btn-outline-secondary" for="sort_year">Year</label>  
                     </div>
+                    <div class="col-auto">
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </div> 
                 </form>
     </header>
     
@@ -98,11 +98,11 @@
                 <td data-title="Type" scope="row"><?= $vehicle['type_name']; ?></td>
                 <td data-title="Class" scope="row"><?= $vehicle['class_name']; ?></td>
                 <td data-title="Price" scope="row">$<?= $vehicle['price']; ?></td>
-                <td data-title="" class="select" scope="row">
+                <td data-title="" scope="row">
                     <form action="." method="POST">
                         <input type="hidden" name="action" value="delete_vehicle">
                         <input type="hidden" name="id" value="<?= $vehicle['ID']; ?>">
-                        <input type="submit" class="delete-btn" value="Delete">
+                        <input type="submit" class="select delete-btn" value="Delete">
                     </form>
                 </td>
             </tr>

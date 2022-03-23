@@ -13,10 +13,14 @@
         <li><a href=".?action=edit_class">Classes</a></li>
       </ul>
     </nav>
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <form action="." method="POST">
             <input type="hidden" name="action" value="show_add_vehicle">
-                    <div class="one">
+                    <div class="one center-box">
                     <select name="make_id" class="dropDown_selector text-primary">
                     
                             <option value="">Make</option>
@@ -32,7 +36,7 @@
                     </select> 
                     </div>
                     
-                    <div class="two">
+                    <div class="two center-box">
                         <select name="type_id" class="dropDown_selector text-primary">
                             <option value="">Type</option>
                             <?php foreach ($types as $type) : ?>
@@ -47,7 +51,7 @@
                         </select>
                     </div>
 
-                    <div class="three">
+                    <div class="three center-box">
                         <select name="class_id" class="dropDown_selector text-primary">
                             <option value="">Class</option>
                             <?php foreach ($classes as $class) : ?>
@@ -61,11 +65,13 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
+                    <div class="center-box">
             <input type="text" class="todo-input" aria-label="todo-input" placeholder="Year" aria-placeholder="new-todo..." name="class" maxlength="30" autofocus required>
 
             <input type="text" class="todo-input" aria-label="todo-input" placeholder="Model" aria-placeholder="new-todo..." name="class" maxlength="30" autofocus required>
 
             <input type="text" class="todo-input" aria-label="todo-input" placeholder="Price" aria-placeholder="new-todo..." name="class" maxlength="30" autofocus required>
+        </div>
             
             <button type="submit" class="submit-btn">Add Vehicle</button>
         </form>
