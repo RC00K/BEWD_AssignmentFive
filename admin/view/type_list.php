@@ -8,7 +8,7 @@
       <ul>
         <li><a href=".?action=show_vehicle_list">Home</a></li>
         <li><a href=".?action=add_vehicle">Vehicles</a></li>
-        <li><a href="..?action=edit_makes">Makes</a></li>
+        <li><a href=".?action=edit_makes">Makes</a></li>
         <li><a class="active" href=".?action=edit_type">Types</a></li>
         <li><a href=".?action=edit_class">Classes</a></li>
       </ul>

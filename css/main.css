@@ -16,7 +16,8 @@ body {
 }
 
 header {
-	background-image: url('banner.jpg');
+	background: linear-gradient(rgba(52, 153, 199, 0.8), rgba(10, 12, 49, 0.8)), url('banner.jpg');
+	background: -webkit-linear-gradient(rgba(52, 153, 199, 0.8), rgba(10, 12, 49, 0.8)), url('banner.jpg');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	min-height: 25vh;
@@ -80,7 +81,7 @@ button {
 	cursor: pointer;
 	display: block;
 	margin: 1% auto;
-	background: #4a6c96;
+	background: #ec6f66;
 	border: 0;
 	outline: none;
 	color: white;
@@ -95,7 +96,7 @@ button {
     cursor: pointer;
     margin: 1% auto;
     display: block;
-    background: #4a6c96;
+    background: #ec6f66;
     border: 0;
     outline: none;
     color: white;
@@ -235,17 +236,17 @@ footer {
 	font-size: 14px;
 	font-family: sans-serif;
 	color: #ffffff;
-	background: #4a6c96;
+	background: #ec6f66;
 	cursor: pointer;
 	transition: background 0.1s;
 }
 
 .radio__label:not(:last-of-type) {
-	border-right: 1px solid #2e445e;
+	border-right: 1px solid #9f4b45;
 }
 
 .radio__input:checked + .radio__label {
-	background: #2e445e;
+	background: #9f4b45;
 }
 
 main {
