@@ -10,7 +10,7 @@
 	<script src="https://use.fontawesome.com/289831cdda.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet preload noopener" as="font">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="./css/main.css">
 	<title>Zippy Auto</title>
 </head>
 
