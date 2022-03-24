@@ -68,9 +68,9 @@
                     <div class="center-box">
             <input type="text" class="todo-input" aria-label="todo-input" placeholder="Year" aria-placeholder="new-todo..." name="year" maxlength="30" autofocus required>
 
-            <input type="text" class="todo-input" aria-label="todo-input" placeholder="Model" aria-placeholder="new-todo..." name="class" maxlength="30" autofocus required>
+            <input type="text" class="todo-input" aria-label="todo-input" placeholder="Model" aria-placeholder="new-todo..." name="model" maxlength="30" autofocus required>
 
-            <input type="text" class="todo-input" aria-label="todo-input" placeholder="Price" aria-placeholder="new-todo..." name="class" maxlength="30" autofocus required>
+            <input type="text" class="todo-input" aria-label="todo-input" placeholder="Price" aria-placeholder="new-todo..." name="price" maxlength="30" autofocus required>
         </div>
             
             <button type="submit" class="submit-btn">Add Vehicle</button>
