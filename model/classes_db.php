@@ -11,11 +11,11 @@ public static function get_classes() {
 	return $classes;
 }
 
-public static function add_class($class) {
+public static function add_class($class_name) {
 	global $db;
-	$query = 'INSERT INTO classes (class) VALUES (:class)';
+	$query = 'INSERT INTO classes (class_name) VALUES (:class_name)';
 	$statement = $db->prepare($query);
-	$statement->bindValue(':class', $class);
+	$statement->bindValue(':class_name', $class_name);
 	$statement->execute();
 	$statement->closeCursor();
 }
@@ -29,3 +29,4 @@ public static function delete_class($class_id) {
 	$statement->closeCursor();
 }
 }
+?>

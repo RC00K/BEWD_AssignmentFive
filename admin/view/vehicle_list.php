@@ -54,7 +54,7 @@
                             <?php }else { ?>
                                 <option value="<?= $make['make_id']?>">
                             <?php } ?>
-                                    <?= $make['make'] ?>
+                                    <?= $make['make_name'] ?>
                                 </option>
                             <?php endforeach; ?>
                     </select> 
@@ -67,7 +67,7 @@
                             <?php }else { ?>
                                 <option value="<?= $type['type_id']?>">
                             <?php } ?>
-                                    <?= $type['type'] ?>
+                                    <?= $type['type_name'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -80,7 +80,7 @@
                             <?php }else { ?>
                                 <option value="<?= $class['class_id']?>">
                             <?php } ?>
-                                    <?= $class['class'] ?>
+                                    <?= $class['class_name'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -115,10 +115,10 @@
             <?php foreach($vehicles as $vehicle) : ?>
             <tr>
                 <td data-title="Year" scope="row"><?= $vehicle['year']; ?></td>
-                <td data-title="Make" scope="row"><?= $vehicle['make']; ?></td>
+                <td data-title="Make" scope="row"><?= $vehicle['make_name']; ?></td>
                 <td data-title="Model" scope="row"><?= $vehicle['model']; ?></td>
-                <td data-title="Type" scope="row"><?= $vehicle['type']; ?></td>
-                <td data-title="Class" scope="row"><?= $vehicle['class']; ?></td>
+                <td data-title="Type" scope="row"><?= $vehicle['type_name']; ?></td>
+                <td data-title="Class" scope="row"><?= $vehicle['class_name']; ?></td>
                 <td data-title="Price" scope="row">$<?= $vehicle['price']; ?></td>
                 <td data-title="" scope="row">
                     <form action="." method="POST">

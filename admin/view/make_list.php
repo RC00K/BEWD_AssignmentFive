@@ -33,7 +33,7 @@
             <?php if($makes) { ?>
             <?php foreach($makes as $make) : ?>
             <tr>
-                <td data-title="Make" scope="row"><?= $make['make']; ?></td>
+                <td data-title="Make" scope="row"><?= $make['make_name']; ?></td>
                 <td data-title="" class="select" scope="row">
                     <form action="." method="POST">
                         <input type="hidden" name="action" value="delete_make">

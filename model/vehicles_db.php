@@ -132,3 +132,4 @@ public static function delete_vehicle($id){
     $statement->closeCursor();
 }
 }
+?>

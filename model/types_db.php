@@ -13,9 +13,9 @@ public static function get_types() {
 
 public static function add_type($type) {
 	global $db;
-	$query = 'INSERT INTO types (type) VALUES (:type)';
+	$query = 'INSERT INTO types (type_name) VALUES (:type_name)';
 	$statement = $db->prepare($query);
-	$statement->bindValue(':type', $type);
+	$statement->bindValue(':type_name', $type);
 	$statement->execute();
 	$statement->closeCursor();
 }
@@ -29,3 +29,4 @@ public static function delete_type($type_id) {
 	$statement->closeCursor();
 }
 }
+?>

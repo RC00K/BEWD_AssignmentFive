@@ -33,7 +33,7 @@
             <?php if($types) { ?>
             <?php foreach($types as $type) : ?>
             <tr>
-                <td data-title="Type" scope="row"><?= $type['type']; ?></td>
+                <td data-title="Type" scope="row"><?= $type['type_name']; ?></td>
                 <td data-title="" class="select" scope="row">
                     <form action="." method="POST">
                         <input type="hidden" name="action" value="delete_type">

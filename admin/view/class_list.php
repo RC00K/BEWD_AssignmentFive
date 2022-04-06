@@ -32,7 +32,7 @@
             <?php if($classes) { ?>
             <?php foreach($classes as $class) : ?>
             <tr>
-                <td data-title="Class" scope="row"><?= $class['class']; ?></td>
+                <td data-title="Class" scope="row"><?= $class['class_name']; ?></td>
                 <td data-title="" class="select" scope="row">
                     <form action="." method="POST">
                         <input type="hidden" name="action" value="delete_class">

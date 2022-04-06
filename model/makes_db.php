@@ -11,11 +11,11 @@ public static function get_makes() {
 	return $makes;
 }
 
-public static function add_make($make) {
+public static function add_make($make_name) {
 	global $db;
-	$query = 'INSERT INTO makes (make) VALUES (:make)';
+	$query = 'INSERT INTO makes (make_name) VALUES (:make_name)';
 	$statement = $db->prepare($query);
-	$statement->bindValue(':make', $make);
+	$statement->bindValue(':make_name', $make_name);
 	$statement->execute();
 	$statement->closeCursor();
 }
