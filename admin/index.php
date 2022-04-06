@@ -87,7 +87,7 @@ if($action == 'show_vehicle_list'){
     $adminid = $_SESSION['adminid'];
     if($type_id){
       
-        $vehicles=VehicleDB::get_vehicles_by_type($type_id);
+        $vehicles=VehicleDB::get_vehicles_by_type($type_id, $sort);
        
     }
     else if($make_id){        
