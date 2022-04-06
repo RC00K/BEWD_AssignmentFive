@@ -18,7 +18,7 @@
             <input type="hidden" name="action" value="add_type">
             <input type="text" name="type" class="todo-input" aria-label="todo-input" placeholder="Type Name" aria-placeholder="new-todo..." maxlength="30" autofocus required>
             
-            <button type="submit" class="submit-btn">Add Type</button>
+            <button type="submit" class="submit-btn">Add</button>
         </form>
     </header>
     
@@ -33,7 +33,7 @@
             <?php if($types) { ?>
             <?php foreach($types as $type) : ?>
             <tr>
-                <td data-title="Type" scope="row"><?= $type['type_name']; ?></td>
+                <td data-title="Type" scope="row"><?= $type['type']; ?></td>
                 <td data-title="" class="select" scope="row">
                     <form action="." method="POST">
                         <input type="hidden" name="action" value="delete_type">

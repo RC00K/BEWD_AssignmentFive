@@ -18,7 +18,7 @@
             <input type="hidden" name="action" value="add_make">
             <input type="text" name="make" class="todo-input" aria-label="todo-input" placeholder="Make Name" aria-placeholder="new-todo..." maxlength="30" autofocus required>
             
-            <button type="submit" class="submit-btn">Add Make</button>
+            <button type="submit" class="submit-btn">Add</button>
         </form>
     </header>
 
@@ -33,7 +33,7 @@
             <?php if($makes) { ?>
             <?php foreach($makes as $make) : ?>
             <tr>
-                <td data-title="Make" scope="row"><?= $make['make_name']; ?></td>
+                <td data-title="Make" scope="row"><?= $make['make']; ?></td>
                 <td data-title="" class="select" scope="row">
                     <form action="." method="POST">
                         <input type="hidden" name="action" value="delete_make">

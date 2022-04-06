@@ -1,14 +1,48 @@
 <?php include 'header.php'; ?>
     <nav>
       <div class="logo">Zippy Auto</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href=".?action=show_vehicle_list">Home</a></li>
+        <?php 
+            if(!isset($userid) && ($action != 'register' || $action != 'logout')) {
+                if($action == 'logout') {
+                    echo '';
+                } else {
+                    echo '<li><a href=".?action=register">Register</a></li>';
+                }
+            } else if(isset($userid) && ($action != 'register' || $action != 'logout')) {
+                if($action == 'register' || $action == 'logout') {
+                    echo '';
+                } else {
+                    echo "<li><a href='.?action=logout'>Sign Out</a></li>";
+                }
+            }
+        ?>
+      </ul>
     </nav>
     <header>
-        <div class="box">
+        <?php 
+            if(!isset($userid) && ($action != 'register' || $action != 'logout')) {
+                if($action == 'logout') {
+                    echo '';
+                } else {
+                    echo '<h1>Welcome</h1>';
+                }
+            } else if(isset($userid) && ($action != 'register' || $action != 'logout')) {
+                if($action == 'register' || $action == 'logout') {
+                    echo '';
+                } else {
+                    echo "<h1>Welcome {$userid}!</h1>";
+                }
+            }
+        ?>
         <form action="." method="GET">
                     <input type="hidden" name="action" value="show_vehicle_list">
-                    <div class="one">
                     <select name="make_id" class="dropDown_selector text-primary">
-                    
                             <option value="">View All Makes</option>
                             <?php foreach ($makes as $make) : ?>
                                 <?php if($make_id == $make['make_id']) {?>
@@ -20,9 +54,7 @@
                                 </option>
                             <?php endforeach; ?>
                     </select> 
-                    </div>
-                    
-                    <div class="two">
+                                        
                         <select name="type_id" class="dropDown_selector text-primary">
                             <option value="">View All Types</option>
                             <?php foreach ($types as $type) : ?>
@@ -35,9 +67,7 @@
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </div>
 
-                    <div class="three">
                         <select name="class_id" class="dropDown_selector text-primary">
                             <option value="">View All Classes</option>
                             <?php foreach ($classes as $class) : ?>
@@ -50,7 +80,6 @@
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </div>
 
                     <div class="radio btn-class btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="radio__input btn-check" name="sort" id="sort_price" value="price" autocomplete="off" checked>

@@ -11,15 +11,42 @@
         <li><a href=".?action=edit_makes">Makes</a></li>
         <li><a href=".?action=edit_type">Types</a></li>
         <li><a href=".?action=edit_class">Classes</a></li>
+        <?php 
+            if(!isset($adminid) && ($action != 'register' || $action != 'logout')) {
+                if($action == 'logout') {
+                    echo '';
+                } else {
+                    echo '<li><a href=".?action=register">Register</a></li>';
+                }
+            } else if(isset($adminid) && ($action != 'register' || $action != 'logout')) {
+                if($action == 'register' || $action == 'logout') {
+                    echo '';
+                } else {
+                    echo "<li><a href='.?action=logout'>Sign Out</a></li>";
+                }
+            }
+        ?>
       </ul>
     </nav>
     <header>
-        <div class="box">
+        <?php 
+            if(!isset($adminid) && ($action != 'register' || $action != 'logout')) {
+                if($action == 'logout') {
+                    echo '';
+                } else {
+                    echo '<h1>Welcome</h1>';
+                }
+            } else if(isset($adminid) && ($action != 'register' || $action != 'logout')) {
+                if($action == 'register' || $action == 'logout') {
+                    echo '';
+                } else {
+                    echo "<h1>Welcome {$adminid}!</h1>";
+                }
+            }
+        ?>
         <form action="." method="GET">
                     <input type="hidden" name="action" value="show_vehicle_list">
-                    <div class="one">
                     <select name="make_id" class="dropDown_selector text-primary">
-                    
                             <option value="">View All Makes</option>
                             <?php foreach ($makes as $make) : ?>
                                 <?php if($make_id == $make['make_id']) {?>
@@ -27,13 +54,11 @@
                             <?php }else { ?>
                                 <option value="<?= $make['make_id']?>">
                             <?php } ?>
-                                    <?= $make['make_name'] ?>
+                                    <?= $make['make'] ?>
                                 </option>
                             <?php endforeach; ?>
                     </select> 
-                    </div>
                     
-                    <div class="two">
                         <select name="type_id" class="dropDown_selector text-primary">
                             <option value="">View All Types</option>
                             <?php foreach ($types as $type) : ?>
@@ -42,13 +67,11 @@
                             <?php }else { ?>
                                 <option value="<?= $type['type_id']?>">
                             <?php } ?>
-                                    <?= $type['type_name'] ?>
+                                    <?= $type['type'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </div>
 
-                    <div class="three">
                         <select name="class_id" class="dropDown_selector text-primary">
                             <option value="">View All Classes</option>
                             <?php foreach ($classes as $class) : ?>
@@ -57,19 +80,18 @@
                             <?php }else { ?>
                                 <option value="<?= $class['class_id']?>">
                             <?php } ?>
-                                    <?= $class['class_name'] ?>
+                                    <?= $class['class'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </div>
-
-                    <div class="radio btn-class btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
+                        <div class="radio btn-class btn-group btn-group-sm" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="radio__input btn-check" name="sort" id="sort_price" value="price" autocomplete="off" checked>
                             <label class="radio__label btn btn-outline-secondary" for="sort_price">Price</label>
 
                             <input type="radio" class="radio__input btn-check" name="sort" id="sort_year" value="year" autocomplete="off">
                             <label class="radio__label btn btn-outline-secondary" for="sort_year">Year</label>  
-                    </div>
+                        </div>
+
                     <div class="col-auto">
                         <button type="submit" class="submit-btn">Submit</button>
                     </div> 
@@ -93,10 +115,10 @@
             <?php foreach($vehicles as $vehicle) : ?>
             <tr>
                 <td data-title="Year" scope="row"><?= $vehicle['year']; ?></td>
-                <td data-title="Make" scope="row"><?= $vehicle['make_name']; ?></td>
+                <td data-title="Make" scope="row"><?= $vehicle['make']; ?></td>
                 <td data-title="Model" scope="row"><?= $vehicle['model']; ?></td>
-                <td data-title="Type" scope="row"><?= $vehicle['type_name']; ?></td>
-                <td data-title="Class" scope="row"><?= $vehicle['class_name']; ?></td>
+                <td data-title="Type" scope="row"><?= $vehicle['type']; ?></td>
+                <td data-title="Class" scope="row"><?= $vehicle['class']; ?></td>
                 <td data-title="Price" scope="row">$<?= $vehicle['price']; ?></td>
                 <td data-title="" scope="row">
                     <form action="." method="POST">

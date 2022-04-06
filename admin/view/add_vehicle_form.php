@@ -13,14 +13,14 @@
         <li><a href=".?action=edit_class">Classes</a></li>
       </ul>
     </nav>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="row">
+            <div class="col-md-12">
         <form action="." method="POST">
+            <h1>Add Vehicle</h1>
+            <fieldset>
+                <legend><span class="number">1</span>Specs</legend>
             <input type="hidden" name="action" value="show_add_vehicle">
-                    <div class="one center-box">
+                    
                     <select name="make_id" class="dropDown_selector text-primary">
                     
                             <option value="">Make</option>
@@ -30,13 +30,11 @@
                             <?php }else { ?>
                                 <option value="<?= $make['make_id']?>">
                             <?php } ?>
-                                    <?= $make['make_name'] ?>
+                                    <?= $make['make'] ?>
                                 </option>
                             <?php endforeach; ?>
                     </select> 
-                    </div>
-                    
-                    <div class="two center-box">
+        
                         <select name="type_id" class="dropDown_selector text-primary">
                             <option value="">Type</option>
                             <?php foreach ($types as $type) : ?>
@@ -45,13 +43,11 @@
                             <?php }else { ?>
                                 <option value="<?= $type['type_id']?>">
                             <?php } ?>
-                                    <?= $type['type_name'] ?>
+                                    <?= $type['type'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </div>
 
-                    <div class="three center-box">
                         <select name="class_id" class="dropDown_selector text-primary">
                             <option value="">Class</option>
                             <?php foreach ($classes as $class) : ?>
@@ -60,20 +56,21 @@
                             <?php }else { ?>
                                 <option value="<?= $class['class_id']?>">
                             <?php } ?>
-                                    <?= $class['class_name'] ?>
+                                    <?= $class['class'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                    </div>
-                    <div class="center-box">
+            <legend><span class="number">2</span>Info</legend>
             <input type="text" class="todo-input" aria-label="todo-input" placeholder="Year" aria-placeholder="new-todo..." name="year" maxlength="30" autofocus required>
 
             <input type="text" class="todo-input" aria-label="todo-input" placeholder="Model" aria-placeholder="new-todo..." name="model" maxlength="30" autofocus required>
 
             <input type="text" class="todo-input" aria-label="todo-input" placeholder="Price" aria-placeholder="new-todo..." name="price" maxlength="30" autofocus required>
-        </div>
+    </fieldset>
             
-            <button type="submit" class="submit-btn">Add Vehicle</button>
+            <button type="submit" class="submit-btn">Add</button>
         </form>
+    </div>
+</div>
 
 <?php include 'footer.php'; ?>

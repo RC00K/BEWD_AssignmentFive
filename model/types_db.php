@@ -13,9 +13,9 @@ public static function get_types() {
 
 public static function add_type($type) {
 	global $db;
-	$query = 'INSERT INTO types (type_name) VALUES (:type_name)';
+	$query = 'INSERT INTO types (type) VALUES (:type)';
 	$statement = $db->prepare($query);
-	$statement->bindValue(':type_name', $type);
+	$statement->bindValue(':type', $type);
 	$statement->execute();
 	$statement->closeCursor();
 }

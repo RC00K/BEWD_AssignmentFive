@@ -17,8 +17,7 @@
         <form action="." method="POST" class="todo-form">
             <input type="hidden" name="action" value="add_class">
             <input type="text" name="class" class="todo-input" aria-label="todo-input" placeholder="Class Name" aria-placeholder="new-todo..."maxlength="30" autofocus required>
-            
-            <button type="submit" class="submit-btn">Add Class</button>
+            <button type="submit" class="submit-btn">Add</button>
         </form>
     </header>
 
@@ -33,7 +32,7 @@
             <?php if($classes) { ?>
             <?php foreach($classes as $class) : ?>
             <tr>
-                <td data-title="Class" scope="row"><?= $class['class_name']; ?></td>
+                <td data-title="Class" scope="row"><?= $class['class']; ?></td>
                 <td data-title="" class="select" scope="row">
                     <form action="." method="POST">
                         <input type="hidden" name="action" value="delete_class">

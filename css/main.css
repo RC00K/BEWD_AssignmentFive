@@ -1,5 +1,5 @@
 * {
-	box-sizing: inherit;
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
@@ -16,8 +16,8 @@ body {
 }
 
 header {
-	background: linear-gradient(rgba(52, 153, 199, 0.8), rgba(10, 12, 49, 0.8)), url('banner.jpg');
-	background: -webkit-linear-gradient(rgba(52, 153, 199, 0.8), rgba(10, 12, 49, 0.8)), url('banner.jpg');
+	background: linear-gradient(rgba(52, 153, 199, 0.8), rgba(10, 12, 49, 0.8));
+	background: -webkit-linear-gradient(rgba(52, 153, 199, 0.8), rgba(10, 12, 49, 0.8));
 	background-repeat: no-repeat;
 	background-size: 100%;
 	min-height: 25vh;
@@ -26,9 +26,10 @@ header {
 }
 
 h1 {
-	display: block;
-    font-size: 30px;
-    font-weight: bold;
+	margin 0 0 30px 0;
+	text-align: center;
+	font-size: 2.5rem;
+	font-weight: lighter;
 }
 
 h2 {
@@ -105,11 +106,14 @@ button {
 }
 
 form {
-	justify-content: center;
-	align-items: center;
+	max-width: 300px;
+  	margin: 10px auto;
+  	padding: 10px 20px;
+  	border-radius: 8px;
 }
 
 form input {
+	flex: 0 0 auto;
 	display: inline-block;
     padding: 0.8rem;
     background-color: #eee;
@@ -128,9 +132,62 @@ input::placeholder {
 	background-color: #eee;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea,
+select {
 	font-family: 'Josefin Sans', sans-serif;
-	color: rgba(134, 132, 132, 1.0);
+	background: rgba(255,255,255,0.1);
+  	border: none;
+  	border-radius: 50px;
+  	height: auto;
+  	margin: 0;
+  	outline: 0;
+  	padding: 15px;
+  	width: 100%;
+  	background-color: #e8eeef;
+  	color: #8a97a0;
+  	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  	margin-bottom: 30px;
+}
+
+fieldset {
+	margin-bottom: 30px;
+	border: none;
+}
+
+legend {
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+}
+
+label {
+	display: block;
+	font-size: 1.5rem;
+}
+
+label.light {
+	font-weight: 300;
+	display: inline;
+}
+
+.number {
+	background-color: #ec6f66;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: 100%;
+}
+
+@media screen and (max-width: 480px) {
+	form {
+		max-width: 480px;
+	}
 }
 
 .no-todo-container {
@@ -221,7 +278,7 @@ footer {
 
 .radio {
 	display: inline-flex;
-	margin-left: 190px;
+	margin: 0 10px 10px 0;
 	overflow: hidden;
 	border-radius: 15px;
 	box-shadow: 0 0 5px rgba(0,0,0,0.25);
@@ -232,13 +289,15 @@ footer {
 }
 
 .radio__label {
+	width: 130px;
 	padding: 6px 20px;
-	font-size: 14px;
-	font-family: sans-serif;
-	color: #ffffff;
-	background: #ec6f66;
-	cursor: pointer;
-	transition: background 0.1s;
+    font-size: 14px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #ffffff;
+    background: #ec6f66;
+    cursor: pointer;
+    transition: background 0.1s;
 }
 
 .radio__label:not(:last-of-type) {
@@ -307,14 +366,6 @@ tfoot th {
 	color: #123740;
 }
 
-.select {
-	padding-bottom: 4px;
-}
-
-.select:before {
-	display: none;
-}
-
 @media (min-width: 460px) {
 	td {
 		text-align: left;
@@ -366,10 +417,6 @@ tfoot th {
 
 	tfoot {
 		display: table-cell;
-	}
-
-	.select {
-		padding: 10px;
 	}
 }
 
@@ -521,39 +568,6 @@ input[type="checkbox"] {
 	flex: 1;
 }
 
-select {
-	margin: 4px;
-	color: #EC6F66;
-	width: 500px;
-	padding: 8px;
-	height: 15px;
-	display: inline-block;
-	border-radius: 40px;
-	border-color: white;
-	cursor: pointer;
-	background: url(https://fontawesome.com/v4/icon/angle-down) 295px 12px no-repeat white;
-}
-
-select:hover {
-	background-color: white;
-	color: black;
-}
-
-select option {
-	background-color: white;
-	color: gray;
-	width: 310px;
-	height: 20px;
-	padding-bottom: 10px;
-	cursor: pointer;
-}
-
-select option:hover {
-	padding-left: 25px;
-	width: 270px;
-	color: #EC6F66;
-}
-
 /* Media 1000 */
 @media (max-width: 1000px) {
 	nav {
@@ -566,10 +580,5 @@ select option:hover {
 	header {
 		padding: 5vw 25vw;
 	}
-
-	form input {
-		min-width: 50vw;
-	}
-
 }
 
