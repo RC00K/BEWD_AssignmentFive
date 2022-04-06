@@ -30,7 +30,7 @@
                             <?php }else { ?>
                                 <option value="<?= $make['make_id']?>">
                             <?php } ?>
-                                    <?= $make['make'] ?>
+                                    <?= $make['make_name'] ?>
                                 </option>
                             <?php endforeach; ?>
                     </select> 
@@ -43,7 +43,7 @@
                             <?php }else { ?>
                                 <option value="<?= $type['type_id']?>">
                             <?php } ?>
-                                    <?= $type['type'] ?>
+                                    <?= $type['type_name'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -56,7 +56,7 @@
                             <?php }else { ?>
                                 <option value="<?= $class['class_id']?>">
                             <?php } ?>
-                                    <?= $class['class'] ?>
+                                    <?= $class['class_name'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
