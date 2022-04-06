@@ -65,7 +65,7 @@
 
             <input type="text" class="todo-input" aria-label="todo-input" placeholder="Model" aria-placeholder="new-todo..." name="model" maxlength="30" autofocus required>
 
-            <input type="number" class="todo-input" aria-label="todo-input" placeholder="Price" aria-placeholder="new-todo..." name="price" maxlength="30" autofocus required>
+            <input type="text" class="todo-input" aria-label="todo-input" placeholder="Price" aria-placeholder="new-todo..." name="price" maxlength="30" autofocus required>
     </fieldset>
             
             <button type="submit" class="submit-btn">Add</button>
